@@ -30,6 +30,7 @@
     src: "{{ go_download_dir }}/ghq_linux_amd64.zip"
     dest: "{{ go_download_dir }}/ghq"
     remote_src: yes
+    creates: "{{ go_download_dir }}/ghq/ghq"
 - name: "bin/ghq"
   file:
     state: link
