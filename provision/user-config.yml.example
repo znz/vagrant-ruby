@@ -1,0 +1,8 @@
+---
+user: "vagrant"
+group: "vagrant"
+
+user_name: "Your Name"
+user_email: "you@example.com"
+
+git_update: no

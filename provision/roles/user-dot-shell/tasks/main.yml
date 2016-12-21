@@ -1,0 +1,26 @@
+---
+- name: "dot-shell"
+  git:
+    repo: https://github.com/znz/dot-shell
+    dest: "/home/{{ user }}/s/github.com/znz/dot-shell"
+    update: "{{ git_update }}"
+- name: "make in dot-shell"
+  make:
+    chdir: "/home/{{ user }}/s/github.com/znz/dot-shell"
+- name: "HashKnownHosts no"
+  lineinfile:
+    dest: "/home/{{ user }}/.ssh/config"
+    regexp: '^HashKnownHosts'
+    line: 'HashKnownHosts no'
+    create: yes
+- name: "make .gitconfig"
+  make:
+    chdir: "/home/{{ user }}/s/github.com/znz/dot-shell"
+    target: "/home/{{ user }}/.gitconfig"
+    params:
+      USER_NAME: "{{ user_name }}"
+      USER_EMAIL: "{{ user_email }}"
+- name: "make .byobu"
+  make:
+    chdir: "/home/{{ user }}/s/github.com/znz/dot-shell"
+    target: "/home/{{ user }}/.byobu"

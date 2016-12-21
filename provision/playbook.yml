@@ -12,3 +12,9 @@
     - nadoka
   vars_files:
     - config.yml
+- hosts: all
+  become: no
+  roles:
+    - user-dot-shell
+  vars_files:
+    - user-config.yml
