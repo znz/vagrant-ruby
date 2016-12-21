@@ -1,0 +1,52 @@
+---
+- name: "ruby git"
+  git:
+    repo: https://github.com/ruby/ruby
+    dest: "/home/{{ user }}/s/github.com/ruby/ruby"
+    update: "{{ git_update }}"
+    depth: "{{ git_depth }}"
+- name: "~/ruby"
+  file:
+    state: link
+    force: yes
+    src: "/home/{{ user }}/s/github.com/ruby/ruby"
+    dest: "/home/{{ user }}/ruby"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+- name: "autoconf"
+  command: "autoconf"
+  args:
+    chdir: "/home/{{ user }}/s/github.com/ruby/ruby"
+    creates: "/home/{{ user }}/s/github.com/ruby/ruby/configure"
+- name: "exclude /build/"
+  lineinfile:
+    dest: "/home/{{ user }}/s/github.com/ruby/ruby/.git/info/exclude"
+    regexp: '^/build/$'
+    line: '/build/'
+    create: yes
+- name: "/home/{{ user }}/s/github.com/ruby/ruby/build"
+  file:
+    state: directory
+    path: "/home/{{ user }}/s/github.com/ruby/ruby/build"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: 0755
+- name: "configure"
+  command: '../configure --prefix="/home/{{ user }}/.anyenv/envs/rbenv/versions/git" --with-openssl-dir="/home/{{ user }}/opt/libressl-{{ libressl_version }}" --enable-shared --enable-debug-env CPPFLAGS="{{ ruby_cppflags }}" --with-valgrind --with-baseruby=/usr/bin/ruby --disable-install-doc CC="ccache clang"'
+  args:
+    chdir: "/home/{{ user }}/s/github.com/ruby/ruby/build"
+    creates: "/home/{{ user }}/s/github.com/ruby/ruby/build/Makefile"
+- name: "make"
+  command: "make"
+  args:
+    chdir: "/home/{{ user }}/s/github.com/ruby/ruby/build"
+    creates: "/home/{{ user }}/s/github.com/ruby/ruby/build/ruby"
+- name: "make install"
+  command: "make install"
+  args:
+    chdir: "/home/{{ user }}/s/github.com/ruby/ruby/build"
+    creates: "/home/{{ user }}/.anyenv/envs/rbenv/versions/git/bin/ruby"
+- name: "rbenv global git"
+  copy:
+    content: "git"
+    dest: "/home/vagrant/.anyenv/envs/rbenv/version"

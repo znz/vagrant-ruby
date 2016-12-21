@@ -19,5 +19,6 @@
     - user-anyenv
     - user-go
     - user-libressl
+    - user-ruby-git
   vars_files:
     - user-config.yml
