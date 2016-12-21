@@ -18,5 +18,6 @@
     - user-dot-shell
     - user-anyenv
     - user-go
+    - user-libressl
   vars_files:
     - user-config.yml
