@@ -1,0 +1,5 @@
+---
+- name: "purge nano"
+  apt: name=nano state=absent purge=yes
+- name: "install vim"
+  apt: name=vim

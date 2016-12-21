@@ -1,0 +1,9 @@
+---
+- include: editor.yml tags=packages-editor
+- include: build.yml tags=packages-build
+- include: misc.yml tags=packages-misc
+- include: golang.yml tags=packages-golang
+- include: unattended-upgrades.yml tags=unattended-upgrades
+- name: install ruby1.9.1
+  apt: name=ruby1.9.1
+  when: ansible_distribution_release == 'precise'

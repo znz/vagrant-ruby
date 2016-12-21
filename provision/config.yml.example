@@ -1,0 +1,13 @@
+---
+user: "vagrant"
+group: "vagrant"
+
+nadoka_fprog_host: "irc.example.org"
+nadoka_fprog_port: 6667
+nadoka_fprog_pass: "ServerPass"
+nadoka_fprog_key: "ChannelKey"
+
+nadoka_slack_host: "example.irc.slack.com"
+nadoka_slack_port: 6667
+nadoka_slack_pass: "example.YourPassword"
+nadoka_slack_user: "YourUser"

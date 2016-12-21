@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  pre_tasks:
+    - name: "install etckeeper"
+      apt: name=etckeeper
+  roles:
+    - znzj.ja_jp
+    - packages
+    - journald
+    - timesyncd
+    - nadoka
+  vars_files:
+    - config.yml

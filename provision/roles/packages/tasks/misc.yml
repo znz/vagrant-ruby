@@ -1,0 +1,33 @@
+---
+- name: install byobu
+  apt: name=byobu
+- name: install curl
+  apt: name=curl
+- name: install aptitude
+  apt: name=aptitude
+- name: install clang
+  apt: name=clang
+- name: install haveged
+  apt: name=haveged
+- name: install lv
+  apt: name=lv
+- name: install source-highlight
+  apt: name=source-highlight
+- name: install subversion
+  apt: name=subversion
+- name: install zsh
+  apt: name=zsh
+- name: install silversearcher-ag
+  apt: name=silversearcher-ag
+  when: ansible_distribution_release != 'precise'
+- name: install shellcheck
+  apt: name=shellcheck
+  when:
+    - ansible_distribution_release != 'precise'
+    - ansible_distribution_release != 'trusty'
+- name: install vim-editorconfig
+  apt: name=vim-editorconfig
+  when:
+    - ansible_distribution_release != 'precise'
+    - ansible_distribution_release != 'trusty'
+    - ansible_distribution_release != 'jessie'

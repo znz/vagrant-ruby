@@ -1,0 +1,7 @@
+---
+- apt_repository:
+    repo: 'ppa:ubuntu-lxc/lxd-stable'
+  when: ansible_distribution_release == 'trusty'
+- name: install golang
+  apt: name=golang
+  when: ansible_distribution_release != 'precise'
