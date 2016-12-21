@@ -16,5 +16,6 @@
   become: no
   roles:
     - user-dot-shell
+    - user-anyenv
   vars_files:
     - user-config.yml

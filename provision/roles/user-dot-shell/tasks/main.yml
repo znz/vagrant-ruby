@@ -4,6 +4,7 @@
     repo: https://github.com/znz/dot-shell
     dest: "/home/{{ user }}/s/github.com/znz/dot-shell"
     update: "{{ git_update }}"
+    depth: "{{ git_depth }}"
 - name: "make in dot-shell"
   make:
     chdir: "/home/{{ user }}/s/github.com/znz/dot-shell"
