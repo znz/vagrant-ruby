@@ -1,0 +1,13 @@
+---
+- name: "ghq"
+  git:
+    repo: https://github.com/motemen/ghq
+    dest: "/home/{{ user }}/g/src/github.com/motemen/ghq"
+    update: "{{ git_update }}"
+    depth: "{{ git_depth }}"
+- name: "make ghq"
+  make:
+    chdir: "/home/{{ user }}/g/src/github.com/motemen/ghq"
+    target: "install"
+    params:
+      GOPATH: "/home/{{ user }}/g"

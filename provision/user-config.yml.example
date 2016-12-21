@@ -7,3 +7,5 @@ user_email: "you@example.com"
 
 git_update: no
 git_depth: 1
+
+go_download_dir: "/home/vagrant/tmp"

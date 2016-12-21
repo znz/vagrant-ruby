@@ -31,3 +31,7 @@
     - ansible_distribution_release != 'precise'
     - ansible_distribution_release != 'trusty'
     - ansible_distribution_release != 'jessie'
+- name: install 7z
+  apt: name=p7zip-full
+- name: install unzip
+  apt: name=unzip

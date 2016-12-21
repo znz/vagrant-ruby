@@ -17,5 +17,6 @@
   roles:
     - user-dot-shell
     - user-anyenv
+    - user-go
   vars_files:
     - user-config.yml
