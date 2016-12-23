@@ -20,5 +20,6 @@
     - user-go
     - user-libressl
     - user-ruby-git
+    - user-old-openssl
   vars_files:
     - user-config.yml

@@ -1,0 +1,41 @@
+---
+- name: "{{ download_cache_dir }}"
+  file:
+    state: directory
+    path: "{{ download_cache_dir }}"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: 0755
+- name: "download old openssl"
+  get_url:
+    url: "https://www.openssl.org/source/old/0.9.x/openssl-{{ old_openssl_version }}.tar.gz"
+    dest: "{{ download_cache_dir }}/openssl-{{ old_openssl_version }}.tar.gz"
+    checksum: "sha256:{{ old_openssl_sha256 }}"
+- name: "{{ build_dir }}"
+  file:
+    state: directory
+    path: "{{ build_dir }}"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: 0755
+- name: "extract openssl-{{ old_openssl_version }}"
+  unarchive:
+    src: "{{ download_cache_dir }}/openssl-{{ old_openssl_version }}.tar.gz"
+    dest: "{{ build_dir }}"
+    remote_src: yes
+    creates: "{{ build_dir }}/openssl-{{ old_openssl_version }}/config"
+- name: "config"
+  command: './config shared --prefix="/home/{{ user }}/opt/openssl-{{ old_openssl_version }}"'
+  args:
+    chdir: "{{ build_dir }}/openssl-{{ old_openssl_version }}"
+    creates: "{{ build_dir }}/openssl-{{ old_openssl_version }}/include/openssl"
+- name: "make"
+  command: "make"
+  args:
+    chdir: "{{ build_dir }}/openssl-{{ old_openssl_version }}"
+    creates: "{{ build_dir }}/openssl-{{ old_openssl_version }}/apps/openssl"
+- name: "make install"
+  command: "make install"
+  args:
+    chdir: "{{ build_dir }}/openssl-{{ old_openssl_version }}"
+    creates: "/home/{{ user }}/opt/openssl-{{ old_openssl_version }}/bin/openssl"
