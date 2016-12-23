@@ -1,0 +1,5 @@
+---
+download_cache_dir: "/home/vagrant/tmp"
+build_dir: "/home/vagrant/build"
+libressl_version: "2.5.0"
+libressl_sha256: "8652bf6b55ab51fb37b686a3f604a2643e0e8fde2c56e6a936027d12afda6eae"
