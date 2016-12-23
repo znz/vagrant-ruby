@@ -13,5 +13,6 @@
       - libffi-dev
       - libgdbm3
       - libgdbm-dev
+      - ruby
 - name: "install ccache"
   apt: name=ccache
