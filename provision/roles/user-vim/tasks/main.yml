@@ -1,0 +1,9 @@
+---
+- name: "enable vim-editorconfig"
+  command: "vim-addons install editorconfig"
+  args:
+    creates: "/home/{{ user }}/.vim/autoload/editorconfig.vim"
+  when:
+    - ansible_distribution_release != 'precise'
+    - ansible_distribution_release != 'trusty'
+    - ansible_distribution_release != 'jessie'

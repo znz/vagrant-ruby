@@ -21,5 +21,6 @@
     - user-libressl
     - user-ruby-git
     - user-old-openssl
+    - user-vim
   vars_files:
     - user-config.yml
