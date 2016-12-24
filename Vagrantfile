@@ -6,6 +6,7 @@ VAGRANTFILE_API_VERSION = '2'
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define 'jessie64', primary: true do |vm|
     vm.vm.box = 'debian/contrib-jessie64'
+    vm.vm.hostname = 'ruby-jessie64'
     if Vagrant.has_plugin?('vagrant-cachier')
       vm.cache.scope = :box
     end
@@ -13,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define 'precise64', autostart: false do |vm|
     vm.vm.box = 'ubuntu/precise64'
-    vm.vm.hostname = 'precise64'
+    vm.vm.hostname = 'ruby-precise64'
     if Vagrant.has_plugin?('vagrant-cachier')
       vm.cache.scope = :box
     end
@@ -21,6 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define 'trusty64', autostart: false do |vm|
     vm.vm.box = 'ubuntu/trusty64'
+    vm.vm.hostname = 'ruby-trusty64'
     if Vagrant.has_plugin?('vagrant-cachier')
       vm.cache.scope = :box
     end
@@ -28,7 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define 'xenial64', autostart: false do |vm|
     vm.vm.box = 'bento/ubuntu-16.04'
-    vm.vm.hostname = 'xenial64'
+    vm.vm.hostname = 'ruby-xenial64'
     if Vagrant.has_plugin?('vagrant-cachier')
       vm.cache.scope = :box
       vm.cache.synced_folder_opts = {
@@ -41,7 +43,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define 'yakkety64', autostart: false do |vm|
     vm.vm.box = 'boxcutter/ubuntu1610'
-    vm.vm.hostname = 'yakkety64'
+    vm.vm.hostname = 'ruby-yakkety64'
     if Vagrant.has_plugin?('vagrant-cachier')
       vm.cache.scope = :box
       vm.cache.synced_folder_opts = {
