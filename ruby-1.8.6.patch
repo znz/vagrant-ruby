@@ -1,0 +1,13 @@
+diff --git a/math.c b/math.c
+index 60dd0b7..cf78fc4 100644
+--- a/math.c
++++ b/math.c
+@@ -34,7 +34,7 @@ domain_check(x, msg)
+ 	if (isnan(x)) {
+ #if defined(EDOM)
+ 	    errno = EDOM;
+-#elif define(ERANGE)
++#elif defined(ERANGE)
+ 	    errno = ERANGE;
+ #endif
+ 	    continue;
