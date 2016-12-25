@@ -39,3 +39,15 @@
   args:
     chdir: "{{ build_dir }}/openssl-{{ old_openssl_version }}"
     creates: "/home/{{ user }}/opt/openssl-{{ old_openssl_version }}/bin/openssl"
+- name: "comment out BN_rand_range in bn.h"
+  lineinfile:
+    dest: "/home/{{ user }}/opt/openssl-{{ old_openssl_version }}/include/openssl/bn.h"
+    regexp: '^(int BN_rand_range\(.*\);)$'
+    line: '/* \1 */'
+    backrefs: yes
+- name: "comment out BN_pseudo_rand_range in bn.h"
+  lineinfile:
+    dest: "/home/{{ user }}/opt/openssl-{{ old_openssl_version }}/include/openssl/bn.h"
+    regexp: '^(int BN_pseudo_rand_range\(.*\);)$'
+    line: '/* \1 */'
+    backrefs: yes

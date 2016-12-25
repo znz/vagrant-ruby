@@ -3,3 +3,4 @@
 /provision/playbook.retry
 /provision/roles/*.*
 /provision/user-config.yml
+/ruby/
