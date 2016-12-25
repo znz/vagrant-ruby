@@ -54,6 +54,7 @@ versions=(
     2.2.5
     2.3.0
     2.3.3
+    2.4.0
 )
 export RUBY_CONFIGURE_OPTS="--disable-install-doc"
 for ver in "${versions[@]}"; do
