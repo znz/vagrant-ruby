@@ -9,7 +9,7 @@
     state: directory
     owner: "root"
     group: "systemd-journal"
-    mode: 0755
+    mode: 02755
   when: getent_group['systemd-journal']
 - name: "adduser {{ user }} systemd-journal"
   user:
