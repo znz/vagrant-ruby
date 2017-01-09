@@ -13,3 +13,6 @@
 - src: https://github.com/znz/ansible-role-user-tools
   version: master
   name: znz.user-tools
+- src: https://github.com/znz/ansible-role-user-libressl
+  version: master
+  name: znz.user-libressl

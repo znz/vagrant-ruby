@@ -18,7 +18,7 @@
     - znz.user-dot-shell
     - znz.user-anyenv
     - znz.user-tools
-    - user-libressl
+    - znz.user-libressl
     - user-ruby-git
     - user-old-openssl
     - user-vim
