@@ -9,13 +9,13 @@
     - packages
     - znz.journald
     - znz.timesyncd
-    - nadoka
+    - znz.nadoka-private
   vars_files:
     - config.yml
 - hosts: all
   become: no
   roles:
-    - user-dot-shell
+    - znz.user-dot-shell
     - user-anyenv
     - user-go
     - user-libressl

@@ -4,3 +4,6 @@
 - src: https://github.com/znz/ansible-role-nadoka-private
   version: master
   name: znz.nadoka-private
+- src: https://github.com/znz/ansible-role-user-dot-shell
+  version: master
+  name: znz.user-dot-shell
