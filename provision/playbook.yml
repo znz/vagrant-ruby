@@ -16,7 +16,7 @@
   become: no
   roles:
     - znz.user-dot-shell
-    - user-anyenv
+    - znz.user-anyenv
     - user-go
     - user-libressl
     - user-ruby-git

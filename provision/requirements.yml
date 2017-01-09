@@ -7,3 +7,6 @@
 - src: https://github.com/znz/ansible-role-user-dot-shell
   version: master
   name: znz.user-dot-shell
+- src: https://github.com/znz/ansible-role-user-anyenv
+  version: master
+  name: znz.user-anyenv
