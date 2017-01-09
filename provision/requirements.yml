@@ -1,3 +1,6 @@
 - src: znzj.ja_jp
 - src: znz.journald
 - src: znz.timesyncd
+- src: https://github.com/znz/ansible-role-nadoka-private
+  version: master
+  name: znz.nadoka-private
