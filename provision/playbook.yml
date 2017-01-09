@@ -17,7 +17,7 @@
   roles:
     - znz.user-dot-shell
     - znz.user-anyenv
-    - user-go
+    - znz.user-tools
     - user-libressl
     - user-ruby-git
     - user-old-openssl
