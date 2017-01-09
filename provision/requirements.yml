@@ -1,2 +1,3 @@
 - src: znzj.ja_jp
 - src: znz.journald
+- src: znz.timesyncd

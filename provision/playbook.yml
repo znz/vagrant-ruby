@@ -8,7 +8,7 @@
     - znzj.ja_jp
     - packages
     - znz.journald
-    - timesyncd
+    - znz.timesyncd
     - nadoka
   vars_files:
     - config.yml
