@@ -16,3 +16,6 @@
 - src: https://github.com/znz/ansible-role-user-libressl
   version: master
   name: znz.user-libressl
+- src: https://github.com/znz/ansible-role-user-ruby-git
+  version: master
+  name: znz.user-ruby-git

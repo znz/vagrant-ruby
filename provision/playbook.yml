@@ -19,7 +19,7 @@
     - znz.user-anyenv
     - znz.user-tools
     - znz.user-libressl
-    - user-ruby-git
+    - znz.user-ruby-git
     - user-old-openssl
     - user-vim
   vars_files:
