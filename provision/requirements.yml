@@ -22,3 +22,6 @@
 - src: https://github.com/znz/ansible-role-user-old-openssl
   version: master
   name: znz.user-old-openssl
+- src: https://github.com/znz/ansible-role-user-vim
+  version: master
+  name: znz.user-vim

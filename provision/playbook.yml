@@ -21,6 +21,6 @@
     - znz.user-libressl
     - znz.user-ruby-git
     - znz.user-old-openssl
-    - user-vim
+    - znz.user-vim
   vars_files:
     - user-config.yml
