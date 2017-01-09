@@ -7,7 +7,7 @@
   roles:
     - znzj.ja_jp
     - packages
-    - journald
+    - znz.journald
     - timesyncd
     - nadoka
   vars_files:
